@@ -324,8 +324,10 @@ image-slot {
   width: 100%;
   aspect-ratio: 4 / 5;
   margin-bottom: 28px;
+  overflow: hidden;
 }
 .story-photo image-slot { width: 100%; height: 100%; }
+.story-photo img { width: 100%; height: 100%; object-fit: cover; display: block; border: 1px solid var(--line-soft); }
 .story p { color: var(--cream-dim); font-size: 16px; margin-bottom: 16px; }
 .story p:last-child { margin-bottom: 0; }
 .story .sign {
@@ -337,24 +339,24 @@ image-slot {
 }
 
 /* ============================================================
-   GALLERY
+   GALLERY (masonry)
    ============================================================ */
-.gal-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
+.gal-masonry {
+  column-count: 2;
+  column-gap: 10px;
   margin-top: 32px;
 }
-.gal-grid image-slot { width: 100%; height: 100%; }
-.gal-cell {
-  position: relative;
-  overflow: hidden;
+.gal-masonry img {
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+  break-inside: avoid;
   cursor: pointer;
   background: var(--bg-3);
+  border: 1px solid var(--line-soft);
+  transition: filter .4s, transform .4s;
 }
-.gal-cell.tall { aspect-ratio: 3 / 4; }
-.gal-cell.wide { grid-column: span 2; aspect-ratio: 16 / 10; }
-.gal-cell.sq { aspect-ratio: 1; }
+.gal-masonry img:hover { filter: brightness(1.08); }
 
 /* lightbox */
 .lightbox {
@@ -486,7 +488,38 @@ image-slot {
 @keyframes eq { 0%,100%{ transform: scaleY(.4) } 50%{ transform: scaleY(1) } }
 
 /* ============================================================
-   GUEST UPLOAD
+   GUEST ALBUM (Google Photos)
+   ============================================================ */
+.album {
+  border: 1px solid var(--line);
+  padding: 30px 26px;
+  margin-top: 24px;
+  background:
+    radial-gradient(130% 70% at 50% 0%, rgba(231,192,136,0.08), transparent 60%),
+    rgba(255,255,255,0.012);
+}
+.album-head {
+  display: flex; align-items: center; gap: 16px;
+  padding-bottom: 22px; margin-bottom: 22px;
+  border-bottom: 1px solid var(--line-soft);
+}
+.album-ico {
+  width: 56px; height: 56px; flex: none;
+  border: 1px solid var(--basil-line);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--basil);
+  background: var(--bg-2);
+}
+.album-meta .t { font-family: var(--font-display); font-size: 24px; line-height: 1.1; }
+.album-meta .s {
+  font-family: var(--font-label);
+  font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--cream-dim); margin-top: 4px;
+}
+.btn-solid[href] { display: block; text-align: center; text-decoration: none; }
+
+/* ============================================================
+   GUEST UPLOAD (legacy mock — kept for reference)
    ============================================================ */
 .drop {
   border: 1px dashed var(--basil-line);

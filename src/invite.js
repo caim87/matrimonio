@@ -11,7 +11,9 @@ const CONFIG = {
   // Enlace a tu playlist colaborativa de Spotify
   spotifyUrl: "https://open.spotify.com/playlist/37i9dQZF1DXcBWIGoYBM5M",
   // Enlace de un video Save the Date (YouTube/Vimeo embed o .mp4). Déjalo vacío para usar solo el póster.
-  videoEmbedUrl: ""
+  videoEmbedUrl: "",
+  // Álbum compartido de Google Fotos para que los invitados suban y vean fotos
+  albumUrl: "https://photos.app.goo.gl/wvn5RZgJannDmine9"
 };
 
 /* ---- Countdown ---------------------------------------------------- */
@@ -117,38 +119,18 @@ const toast = (function () {
   const grid = document.getElementById("galGrid");
   if (!lb || !grid) return;
 
-  let imgs = [];
+  const imgs = [...grid.querySelectorAll("img")];
+  const sources = imgs.map((im) => im.getAttribute("src"));
   let idx = 0;
 
-  function srcOf(cell) {
-    const slot = cell.querySelector("image-slot");
-    if (!slot) return null;
-    // image-slot renders an <img> internally once filled
-    const inner = slot.shadowRoot && slot.shadowRoot.querySelector("img");
-    if (inner && inner.src && !inner.src.startsWith("data:image/svg")) return inner.src;
-    const attr = slot.getAttribute("src");
-    return attr || null;
-  }
-
   function open(i) {
-    const list = [...grid.querySelectorAll(".gal-cell")]
-      .map(srcOf).filter(Boolean);
-    if (!list.length) { toast("Aún no hay fotos en la galería"); return; }
-    imgs = list;
-    idx = Math.min(i, imgs.length - 1);
-    lbImg.src = imgs[idx];
+    idx = i;
+    lbImg.src = sources[idx];
     lb.classList.add("open");
   }
-  function show(n) { idx = (n + imgs.length) % imgs.length; lbImg.src = imgs[idx]; }
+  function show(n) { idx = (n + sources.length) % sources.length; lbImg.src = sources[idx]; }
 
-  grid.querySelectorAll(".gal-cell").forEach((cell, i) => {
-    cell.addEventListener("click", (e) => {
-      // let the slot's own click-to-fill work when empty
-      if (!srcOf(cell)) return;
-      e.preventDefault();
-      open(i);
-    });
-  });
+  imgs.forEach((im, i) => im.addEventListener("click", () => open(i)));
 
   document.getElementById("lbClose").addEventListener("click", () => lb.classList.remove("open"));
   document.getElementById("lbNext").addEventListener("click", () => show(idx + 1));
@@ -162,81 +144,17 @@ const toast = (function () {
   });
 })();
 
-/* ---- Guest photo upload (mock, persisted in localStorage) --------- */
-(function guestUpload() {
-  const input = document.getElementById("fileInput");
-  const drop = document.getElementById("drop");
-  const grid = document.getElementById("guestGrid");
-  const count = document.getElementById("guestCount");
-  if (!input || !grid) return;
-
-  const KEY = "lya_guest_photos";
-  let photos = [];
-  try { photos = JSON.parse(localStorage.getItem(KEY) || "[]"); } catch (e) { photos = []; }
-
-  function save() { try { localStorage.setItem(KEY, JSON.stringify(photos)); } catch (e) {} }
-
-  function render() {
-    grid.innerHTML = "";
-    photos.forEach((p) => {
-      const cell = document.createElement("div");
-      cell.className = "g-cell";
-      const img = document.createElement("img");
-      img.src = p.src; img.alt = "Foto de invitado";
-      cell.appendChild(img);
-      if (p.by) {
-        const by = document.createElement("div");
-        by.className = "by";
-        by.textContent = "📷 " + p.by;
-        cell.appendChild(by);
-      }
-      grid.appendChild(cell);
-    });
-    count.textContent = photos.length
-      ? photos.length + (photos.length === 1 ? " foto compartida" : " fotos compartidas")
-      : "Sé el primero en compartir un recuerdo";
-  }
-
-  function addFiles(files) {
-    const arr = [...files].filter((f) => f.type.startsWith("image/")).slice(0, 12);
-    if (!arr.length) return;
-    let pending = arr.length;
-    arr.forEach((file) => {
-      const reader = new FileReader();
-      reader.onload = (ev) => {
-        // downscale for storage friendliness
-        const img = new Image();
-        img.onload = () => {
-          const max = 900;
-          let { width, height } = img;
-          if (width > max || height > max) {
-            const r = Math.min(max / width, max / height);
-            width = Math.round(width * r); height = Math.round(height * r);
-          }
-          const c = document.createElement("canvas");
-          c.width = width; c.height = height;
-          c.getContext("2d").drawImage(img, 0, 0, width, height);
-          photos.unshift({ src: c.toDataURL("image/jpeg", 0.82), by: "" });
-          if (--pending === 0) { save(); render(); toast("¡Foto compartida!"); }
-        };
-        img.src = ev.target.result;
-      };
-      reader.readAsDataURL(file);
-    });
-  }
-
-  input.addEventListener("change", () => { addFiles(input.files); input.value = ""; });
-  ["dragover", "dragenter"].forEach((ev) =>
-    drop.addEventListener(ev, (e) => { e.preventDefault(); drop.classList.add("drag"); }));
-  ["dragleave", "drop"].forEach((ev) =>
-    drop.addEventListener(ev, (e) => { e.preventDefault(); drop.classList.remove("drag"); }));
-  drop.addEventListener("drop", (e) => { if (e.dataTransfer.files) addFiles(e.dataTransfer.files); });
-
-  // seed with a couple of example placeholders the first time
-  if (!photos.length && !localStorage.getItem("lya_seeded")) {
-    localStorage.setItem("lya_seeded", "1");
-  }
-  render();
+/* ---- Guest photos → Google Photos shared album ------------------- */
+(function guestAlbum() {
+  const add = document.getElementById("albumAdd");
+  const view = document.getElementById("albumView");
+  if (!add || !view) return;
+  const url = CONFIG.albumUrl;
+  add.href = url;
+  view.href = url;
+  [add, view].forEach((a) => a.addEventListener("click", (e) => {
+    if (!url || url === "#") { e.preventDefault(); toast("Agrega el enlace del álbum"); }
+  }));
 })();
 
 /* ---- RSVP --------------------------------------------------------- */

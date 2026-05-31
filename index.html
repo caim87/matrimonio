@@ -72,7 +72,7 @@
       <div class="rule"><span class="dot"></span></div>
     </div>
     <div class="story-photo reveal">
-      <image-slot id="story-photo" shape="rect" fit="cover" placeholder="Foto de la pareja"></image-slot>
+      <img src="src/foto-13.jpg" loading="lazy" alt="Leonardo y Angélica">
     </div>
     <div class="reveal">
       <p>Nos conocimos cuando menos lo buscábamos, y desde la primera conversación supimos que el tiempo a tu lado se sentía distinto: más cálido, más nuestro.</p>
@@ -88,13 +88,21 @@
       <h2 class="title">Nuestra <em>galería</em></h2>
       <div class="rule"><span class="dot"></span></div>
     </div>
-    <div class="gal-grid" id="galGrid">
-      <div class="gal-cell wide"><image-slot id="gal-1" shape="rect" fit="cover" placeholder="Foto destacada"></image-slot></div>
-      <div class="gal-cell tall"><image-slot id="gal-2" shape="rect" fit="cover" placeholder="Foto"></image-slot></div>
-      <div class="gal-cell tall"><image-slot id="gal-3" shape="rect" fit="cover" placeholder="Foto"></image-slot></div>
-      <div class="gal-cell sq"><image-slot id="gal-4" shape="rect" fit="cover" placeholder="Foto"></image-slot></div>
-      <div class="gal-cell sq"><image-slot id="gal-5" shape="rect" fit="cover" placeholder="Foto"></image-slot></div>
-      <div class="gal-cell wide"><image-slot id="gal-6" shape="rect" fit="cover" placeholder="Foto"></image-slot></div>
+    <div class="gal-masonry" id="galGrid">
+      <img src="src/foto-01.jpg" loading="lazy" alt="Leonardo y Angélica — pre-boda">
+      <img src="src/foto-06.jpg" loading="lazy" alt="Leonardo y Angélica — pre-boda">
+      <img src="src/foto-02.jpg" loading="lazy" alt="Leonardo y Angélica — pre-boda">
+      <img src="src/foto-13.jpg" loading="lazy" alt="Leonardo y Angélica — pre-boda">
+      <img src="src/foto-03.jpg" loading="lazy" alt="Leonardo y Angélica — pre-boda">
+      <img src="src/foto-09.jpg" loading="lazy" alt="Leonardo y Angélica — pre-boda">
+      <img src="src/foto-14.jpg" loading="lazy" alt="Leonardo y Angélica — pre-boda">
+      <img src="src/foto-04.jpg" loading="lazy" alt="Leonardo y Angélica — pre-boda">
+      <img src="src/foto-11.jpg" loading="lazy" alt="Leonardo y Angélica — pre-boda">
+      <img src="src/foto-05.jpg" loading="lazy" alt="Leonardo y Angélica — pre-boda">
+      <img src="src/foto-07.jpg" loading="lazy" alt="Leonardo y Angélica — pre-boda">
+      <img src="src/foto-12.jpg" loading="lazy" alt="Leonardo y Angélica — pre-boda">
+      <img src="src/foto-08.jpg" loading="lazy" alt="Leonardo y Angélica — pre-boda">
+      <img src="src/foto-10.jpg" loading="lazy" alt="Leonardo y Angélica — pre-boda">
     </div>
   </section>
 
@@ -178,21 +186,22 @@
       <h2 class="title">Comparte tus <em>fotos</em></h2>
       <div class="rule"><span class="dot"></span></div>
     </div>
-    <p class="lede reveal" style="margin-bottom:6px;">¿Capturaste un momento? Súbelo aquí desde tu celular y vívelo con todos en el muro de la boda.</p>
+    <p class="lede reveal" style="margin-bottom:6px;">¿Capturaste un momento? Súbelo a nuestro álbum compartido y vívelo con todos. Las fotos de todos los invitados quedan en un mismo lugar.</p>
 
-    <label class="drop reveal" id="drop">
-      <div class="ico">
-        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
-          <rect x="3" y="6" width="18" height="14" rx="1"/><circle cx="12" cy="13" r="3.4"/><path d="M9 6l1.5-2h3L15 6"/>
-        </svg>
+    <div class="album reveal">
+      <div class="album-head">
+        <span class="album-ico">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="6" width="18" height="14" rx="1.5"/><circle cx="12" cy="13" r="3.4"/><path d="M9 6l1.5-2h3L15 6"/></svg>
+        </span>
+        <div class="album-meta">
+          <div class="t">Álbum de la boda</div>
+          <div class="s">L &amp; A · 05·08·2026</div>
+        </div>
       </div>
-      <div class="big">Subir una foto</div>
-      <div class="small">Toca para elegir desde tu galería o cámara</div>
-      <input type="file" id="fileInput" accept="image/*" multiple>
-    </label>
-
-    <div class="guest-grid" id="guestGrid"></div>
-    <p class="guest-count" id="guestCount"></p>
+      <a class="btn-solid" id="albumAdd" href="#" target="_blank" rel="noopener">Subir mis fotos</a>
+      <a class="btn-line full" id="albumView" href="#" target="_blank" rel="noopener" style="margin-top:12px;">Ver todas las fotos →</a>
+      <p class="tiny" style="text-align:center;margin-top:16px;color:var(--cream-faint);font-size:11px;letter-spacing:0.12em;">Se abre en Google Fotos · necesitas una cuenta de Google para añadir</p>
+    </div>
   </section>
 
   <!-- ============ RSVP ============ -->
@@ -274,7 +283,6 @@
 
 </div>
 
-<script src="image-slot.js"></script>
 <script src="src/invite.js"></script>
 </body>
 </html>
