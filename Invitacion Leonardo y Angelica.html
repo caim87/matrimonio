@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Leonardo & Angélica · 05.08.2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&family=Marcellus&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="src/styles.css">
+</head>
+<body>
+<div class="shell">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="inicio" data-screen-label="Portada">
+    <div class="frame"></div>
+    <div class="est">Nos casamos</div>
+    <h1 class="names">
+      Leonardo
+      <span class="amp">&amp;</span>
+      Angélica
+    </h1>
+    <div class="meta">
+      <span>Chía</span>
+      <span class="sep">◇</span>
+      <span>05 · 08 · 2026</span>
+    </div>
+
+    <div class="countdown" id="countdown" aria-label="Cuenta regresiva">
+      <div class="cd-cell"><div class="cd-num" id="cd-d">—</div><div class="cd-lab">Días</div></div>
+      <div class="cd-cell"><div class="cd-num" id="cd-h">—</div><div class="cd-lab">Horas</div></div>
+      <div class="cd-cell"><div class="cd-num" id="cd-m">—</div><div class="cd-lab">Min</div></div>
+      <div class="cd-cell"><div class="cd-num" id="cd-s">—</div><div class="cd-lab">Seg</div></div>
+    </div>
+
+    <div class="scroll-cue">
+      <span>Desliza</span>
+      <span class="line"></span>
+    </div>
+  </section>
+
+  <!-- ============ SAVE THE DATE VIDEO ============ -->
+  <section id="video" data-screen-label="Save the Date">
+    <div class="reveal">
+      <div class="kicker warm">Save the Date</div>
+      <h2 class="title">Una fecha que <em>guardar</em></h2>
+      <div class="rule"><span class="dot"></span></div>
+    </div>
+    <div class="media-frame reveal">
+      <div class="video-wrap" id="videoWrap">
+        <video id="stdVideo" preload="metadata" playsinline
+          src="src/202605301905.mp4#t=0.1"></video>
+        <div class="play-btn" id="playBtn">
+          <span class="ring">
+            <svg width="20" height="22" viewBox="0 0 20 22" fill="currentColor"><path d="M0 0l20 11L0 22z"/></svg>
+          </span>
+          <span class="cap">Reproducir video</span>
+        </div>
+      </div>
+    </div>
+    <p class="lede reveal" style="margin-top:22px;text-align:center;margin-left:auto;margin-right:auto;">
+      Acompáñanos a celebrar el comienzo de nuestra historia para toda la vida.
+    </p>
+  </section>
+
+  <!-- ============ STORY ============ -->
+  <section class="story" id="historia" data-screen-label="Historia">
+    <div class="reveal">
+      <div class="kicker">Nuestra historia</div>
+      <h2 class="title">Cómo <em>empezó</em> todo</h2>
+      <div class="rule"><span class="dot"></span></div>
+    </div>
+    <div class="story-photo reveal">
+      <image-slot id="story-photo" shape="rect" fit="cover" placeholder="Foto de la pareja"></image-slot>
+    </div>
+    <div class="reveal">
+      <p>Nos conocimos cuando menos lo buscábamos, y desde la primera conversación supimos que el tiempo a tu lado se sentía distinto: más cálido, más nuestro.</p>
+      <p>Después de años de viajes, risas, planes y café compartido al amanecer, decidimos dar el paso más bonito de todos. Queremos celebrarlo rodeados de las personas que han caminado con nosotros.</p>
+      <p class="sign">Con todo nuestro amor, L &amp; A</p>
+    </div>
+  </section>
+
+  <!-- ============ GALLERY ============ -->
+  <section id="galeria" data-screen-label="Galería">
+    <div class="reveal">
+      <div class="kicker">Pre-boda</div>
+      <h2 class="title">Nuestra <em>galería</em></h2>
+      <div class="rule"><span class="dot"></span></div>
+    </div>
+    <div class="gal-grid" id="galGrid">
+      <div class="gal-cell wide"><image-slot id="gal-1" shape="rect" fit="cover" placeholder="Foto destacada"></image-slot></div>
+      <div class="gal-cell tall"><image-slot id="gal-2" shape="rect" fit="cover" placeholder="Foto"></image-slot></div>
+      <div class="gal-cell tall"><image-slot id="gal-3" shape="rect" fit="cover" placeholder="Foto"></image-slot></div>
+      <div class="gal-cell sq"><image-slot id="gal-4" shape="rect" fit="cover" placeholder="Foto"></image-slot></div>
+      <div class="gal-cell sq"><image-slot id="gal-5" shape="rect" fit="cover" placeholder="Foto"></image-slot></div>
+      <div class="gal-cell wide"><image-slot id="gal-6" shape="rect" fit="cover" placeholder="Foto"></image-slot></div>
+    </div>
+  </section>
+
+  <!-- ============ EVENT DETAILS ============ -->
+  <section id="detalles" data-screen-label="Detalles">
+    <div class="reveal">
+      <div class="kicker warm">El gran día</div>
+      <h2 class="title">Detalles del <em>evento</em></h2>
+      <div class="rule"><span class="dot"></span></div>
+    </div>
+
+    <div class="event reveal">
+      <div class="ev-ico">Ceremonia</div>
+      <h3>Misa de matrimonio</h3>
+      <div class="ev-time">3:00 PM · Miércoles 5 de Agosto</div>
+      <div class="ev-place"><strong>Parroquia de Chía</strong><br>Chía, Cundinamarca</div>
+      <a class="btn-line" href="https://maps.google.com/?q=Parroquia+Santa+Lucía+Chía+Cundinamarca" target="_blank" rel="noopener">
+        Cómo llegar →
+      </a>
+    </div>
+
+    <div class="event reveal">
+      <div class="ev-ico">Celebración</div>
+      <h3>Recepción &amp; fiesta</h3>
+      <div class="ev-time">5:00 PM · hasta el amanecer</div>
+      <div class="ev-place"><strong>Salón de eventos</strong><br>Vía Chía — Cota, Cundinamarca</div>
+      <a class="btn-line" href="https://maps.google.com/?q=Chía+Cundinamarca+salón+de+eventos" target="_blank" rel="noopener">
+        Cómo llegar →
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ DRESS CODE ============ -->
+  <section id="vestimenta" data-screen-label="Código de vestimenta">
+    <div class="reveal">
+      <div class="kicker">Código de vestimenta</div>
+      <h2 class="title">De rigurosa <em>etiqueta</em></h2>
+      <div class="rule"><span class="dot"></span></div>
+    </div>
+    <div class="dress reveal">
+      <div class="swatches">
+        <div class="sw"><span class="chip black"></span><span>Invitados</span></div>
+        <div class="sw"><span class="chip white"></span><span>Los novios</span></div>
+      </div>
+      <h3>Todos de negro</h3>
+      <p>Te pedimos vestir totalmente de <strong style="color:var(--cream)">negro</strong>. El blanco queda reservado para los novios. Acompáñanos a crear una noche elegante bajo luces cálidas.</p>
+    </div>
+  </section>
+
+  <!-- ============ PLAYLIST ============ -->
+  <section id="musica" data-screen-label="Playlist">
+    <div class="reveal">
+      <div class="kicker">La banda sonora</div>
+      <h2 class="title">Arma la <em>fiesta</em></h2>
+      <div class="rule"><span class="dot"></span></div>
+    </div>
+    <div class="playlist reveal">
+      <p class="lede" style="margin-bottom:24px;">Esta noche la creamos entre todos. Agrega tus canciones favoritas a nuestra playlist colaborativa y déjalas sonar el 5 de agosto.</p>
+      <div class="spotify-card">
+        <div class="cover">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm4.59 14.43a.62.62 0 01-.86.21c-2.35-1.44-5.3-1.76-8.79-.96a.62.62 0 11-.28-1.22c3.81-.87 7.08-.5 9.72 1.11.3.18.39.57.21.86zm1.22-2.72a.78.78 0 01-1.07.26c-2.69-1.65-6.79-2.13-9.97-1.17a.78.78 0 11-.45-1.5c3.63-1.09 8.15-.56 11.24 1.34.37.22.49.7.25 1.07zm.1-2.83C14.8 8.92 9.5 8.73 6.4 9.67a.94.94 0 11-.54-1.8c3.56-1.08 9.41-.87 13.12 1.33a.94.94 0 01-.96 1.61z"/></svg>
+        </div>
+        <div class="pl-info">
+          <div class="t">L &amp; A · La Fiesta</div>
+          <div class="s">Playlist colaborativa
+            <span class="eq"><i></i><i></i><i></i><i></i></span>
+          </div>
+        </div>
+      </div>
+      <a class="btn-line full" id="spotifyLink" href="#" target="_blank" rel="noopener">
+        Agregar mis canciones en Spotify →
+      </a>
+      <p class="tiny" style="text-align:center;margin-top:16px;color:var(--cream-faint);font-size:11px;letter-spacing:0.12em;">Abre el enlace, pulsa "Añadir" y suma tus temas</p>
+    </div>
+  </section>
+
+  <!-- ============ GUEST UPLOAD ============ -->
+  <section id="fotos" data-screen-label="Fotos de invitados">
+    <div class="reveal">
+      <div class="kicker warm">El muro de la boda</div>
+      <h2 class="title">Comparte tus <em>fotos</em></h2>
+      <div class="rule"><span class="dot"></span></div>
+    </div>
+    <p class="lede reveal" style="margin-bottom:6px;">¿Capturaste un momento? Súbelo aquí desde tu celular y vívelo con todos en el muro de la boda.</p>
+
+    <label class="drop reveal" id="drop">
+      <div class="ico">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+          <rect x="3" y="6" width="18" height="14" rx="1"/><circle cx="12" cy="13" r="3.4"/><path d="M9 6l1.5-2h3L15 6"/>
+        </svg>
+      </div>
+      <div class="big">Subir una foto</div>
+      <div class="small">Toca para elegir desde tu galería o cámara</div>
+      <input type="file" id="fileInput" accept="image/*" multiple>
+    </label>
+
+    <div class="guest-grid" id="guestGrid"></div>
+    <p class="guest-count" id="guestCount"></p>
+  </section>
+
+  <!-- ============ RSVP ============ -->
+  <section id="rsvp" data-screen-label="Confirmar asistencia">
+    <div class="reveal">
+      <div class="kicker">Confirma tu asistencia</div>
+      <h2 class="title">¿Nos <em>acompañas</em>?</h2>
+      <div class="rule"><span class="dot"></span></div>
+    </div>
+
+    <form class="rsvp reveal" id="rsvpForm">
+      <div class="field">
+        <label for="r-name">Nombre y apellido</label>
+        <input type="text" id="r-name" placeholder="Tu nombre completo" required>
+      </div>
+
+      <div class="field">
+        <label>¿Asistirás?</label>
+        <div class="choice" id="attendChoice">
+          <button type="button" data-v="yes" class="on">Sí, ahí estaré</button>
+          <button type="button" data-v="no">No podré</button>
+        </div>
+      </div>
+
+      <div class="field" id="guestsField">
+        <label for="r-guests">Número de acompañantes</label>
+        <select id="r-guests">
+          <option value="0">Solo yo</option>
+          <option value="1">+1 acompañante</option>
+          <option value="2">+2 acompañantes</option>
+          <option value="3">+3 acompañantes</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="r-note">Un mensaje para los novios (opcional)</label>
+        <textarea id="r-note" rows="2" placeholder="Restricciones alimentarias, deseos, una nota…"></textarea>
+      </div>
+
+      <button type="submit" class="btn-solid">Enviar confirmación</button>
+
+      <div class="rsvp-done" id="rsvpDone">
+        <div class="check">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 13l4 4L19 7"/></svg>
+        </div>
+        <h3 id="doneTitle">¡Gracias!</h3>
+        <p id="doneMsg">Tu confirmación quedó registrada. Nos vemos el 5 de agosto.</p>
+      </div>
+    </form>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <section class="foot" data-screen-label="Cierre">
+    <div class="mono reveal">Te esperamos</div>
+    <div class="hash reveal">#LeonardoYAngelica2026</div>
+    <div class="tiny reveal">Chía · Cundinamarca · 05 Agosto 2026</div>
+  </section>
+
+  <!-- ============ FLOATING NAV ============ -->
+  <nav class="nav" id="nav">
+    <a href="#inicio" data-sec="inicio" title="Inicio" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg></a>
+    <a href="#video" data-sec="video" title="Video"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><polygon points="9 7 17 12 9 17 9 7"/><rect x="3" y="4" width="18" height="16" rx="1"/></svg></a>
+    <a href="#galeria" data-sec="galeria" title="Galería"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="9" r="1.6"/><path d="M21 16l-5-5L5 21"/></svg></a>
+    <a href="#detalles" data-sec="detalles" title="Detalles"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 21s-7-5.5-7-11a7 7 0 0114 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.4"/></svg></a>
+    <a href="#musica" data-sec="musica" title="Música"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg></a>
+    <a href="#fotos" data-sec="fotos" title="Fotos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="6" width="18" height="14" rx="1"/><circle cx="12" cy="13" r="3.4"/></svg></a>
+    <a href="#rsvp" data-sec="rsvp" title="Confirmar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M5 13l4 4L19 7"/></svg></a>
+  </nav>
+
+  <div class="toast" id="toast"></div>
+
+  <!-- ============ LIGHTBOX ============ -->
+  <div class="lightbox" id="lightbox">
+    <button class="lb-close" id="lbClose">✕</button>
+    <button class="lb-nav lb-prev" id="lbPrev">‹</button>
+    <img id="lbImg" alt="Foto de la galería">
+    <button class="lb-nav lb-next" id="lbNext">›</button>
+  </div>
+
+</div>
+
+<script src="image-slot.js"></script>
+<script src="src/invite.js"></script>
+</body>
+</html>
