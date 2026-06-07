@@ -195,12 +195,17 @@ const toast = (function () {
   function sendToGoogleForm(data) {
     const g = CONFIG.gEntry;
     if (!g.nombre) return;
-    const body = new FormData();
-    body.append("entry." + g.nombre,   data.name);
-    body.append("entry." + g.asistira, data.attending);
-    if (data.mensaje) body.append("entry." + g.mensaje, data.mensaje);
+    const params = new URLSearchParams();
+    params.append("entry." + g.nombre,   data.name);
+    params.append("entry." + g.asistira, data.attending);
+    if (data.mensaje) params.append("entry." + g.mensaje, data.mensaje);
     const url = "https://docs.google.com/forms/d/e/" + CONFIG.gFormId + "/formResponse";
-    fetch(url, { method: "POST", mode: "no-cors", body }).catch(() => {});
+    fetch(url, {
+      method:  "POST",
+      mode:    "no-cors",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body:    params.toString()
+    }).catch(() => {});
   }
 
   form.addEventListener("submit", (e) => {
