@@ -782,6 +782,18 @@ image-slot {
   .cd-num { font-size: 32px; }
 }
 
+/* aviso individual RSVP */
+.rsvp-notice {
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  line-height: 1.6;
+  color: var(--cream-faint, rgba(245,238,220,0.55));
+  border-left: 2px solid rgba(196,160,80,0.4);
+  padding-left: 14px;
+  margin: 0 0 28px;
+  font-style: italic;
+}
+
 /* ============================================================
    MUSIC BUTTON — flotante abajo a la derecha
    ============================================================ */
