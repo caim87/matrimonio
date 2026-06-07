@@ -7,13 +7,29 @@
 -------------------------------------------------------------------- */
 const CONFIG = {
   // Fecha y hora del evento (ceremonia)
-  weddingDate: new Date("2026-08-05T15:00:00-05:00"),
+  weddingDate: new Date("2026-08-15T17:00:00-05:00"),
   // Enlace a tu playlist colaborativa de Spotify
   spotifyUrl: "https://open.spotify.com/playlist/37i9dQZF1DXcBWIGoYBM5M",
   // Enlace de un video Save the Date (YouTube/Vimeo embed o .mp4). Déjalo vacío para usar solo el póster.
   videoEmbedUrl: "",
   // Álbum compartido de Google Fotos para que los invitados suban y vean fotos
-  albumUrl: "https://photos.app.goo.gl/wvn5RZgJannDmine9"
+  albumUrl: "https://photos.app.goo.gl/wvn5RZgJannDmine9",
+
+  /* ── Google Form (RSVP) ──────────────────────────────────────────
+     Para obtener los entry IDs:
+     1. Abre el formulario en modo edición en Google Forms
+     2. Clic ⋮ → "Obtener enlace con respuestas predeterminadas"
+     3. Llena un valor en cada campo → clic "Copiar enlace"
+     4. El enlace tendrá ?entry.XXXXXXX=... — esos son los IDs
+     Reemplaza los 0 de abajo con cada número.
+  ─────────────────────────────────────────────────────────────── */
+  gFormId: "1FAIpQLSde1TdE1HiPcA9dCkReuqilTFY0k887hFKNUnV45xC0Q7TVOg",
+  gEntry: {
+    nombre:       457475467,   // "Nombre y apellido"
+    asistira:     893230956,   // "¿Asistirás?"
+    acompanante:  386733171,   // "Vienes con tu acompañante"
+    mensaje:      1517730850,  // "Mensaje para los novios"
+  }
 };
 
 /* ---- Countdown ---------------------------------------------------- */
@@ -161,49 +177,76 @@ const toast = (function () {
 (function rsvp() {
   const form = document.getElementById("rsvpForm");
   if (!form) return;
-  const choice = document.getElementById("attendChoice");
-  const guestsField = document.getElementById("guestsField");
-  const done = document.getElementById("rsvpDone");
-  const doneTitle = document.getElementById("doneTitle");
-  const doneMsg = document.getElementById("doneMsg");
-  let attending = "yes";
+  const attendChoice = document.getElementById("attendChoice");
+  const guestChoice  = document.getElementById("guestChoice");
+  const guestsField  = document.getElementById("guestsField");
+  const done         = document.getElementById("rsvpDone");
+  const doneTitle    = document.getElementById("doneTitle");
+  const doneMsg      = document.getElementById("doneMsg");
+  let attending    = "Si";
+  let acompanante  = "Si";
 
-  choice.querySelectorAll("button").forEach((b) => {
-    b.addEventListener("click", () => {
-      choice.querySelectorAll("button").forEach((x) => x.classList.remove("on"));
-      b.classList.add("on");
-      attending = b.dataset.v;
-      guestsField.style.display = attending === "yes" ? "" : "none";
+  /* ── toggles de selección ── */
+  function bindChoice(container, onChange) {
+    container.querySelectorAll("button").forEach((b) => {
+      b.addEventListener("click", () => {
+        container.querySelectorAll("button").forEach((x) => x.classList.remove("on"));
+        b.classList.add("on");
+        onChange(b.dataset.v);
+      });
     });
+  }
+
+  bindChoice(attendChoice, (v) => {
+    attending = v;
+    guestsField.style.display = attending === "Si" ? "" : "none";
   });
+
+  bindChoice(guestChoice, (v) => { acompanante = v; });
+
+  /* ── envío al Google Form (no-cors → sin redirección) ── */
+  function sendToGoogleForm(data) {
+    const g = CONFIG.gEntry;
+    // Si los entry IDs no están configurados, omite el envío remoto
+    if (!g.nombre) return Promise.resolve();
+    const body = new FormData();
+    body.append("entry." + g.nombre,      data.name);
+    body.append("entry." + g.asistira,    data.attending);
+    if (data.attending === "Si") {
+      body.append("entry." + g.acompanante, data.acompanante);
+    }
+    if (data.mensaje) body.append("entry." + g.mensaje, data.mensaje);
+    const url = "https://docs.google.com/forms/d/e/" + CONFIG.gFormId + "/formResponse";
+    return fetch(url, { method: "POST", mode: "no-cors", body })
+      .catch(() => {}); // CORS bloqueado es esperado; el dato llega igual
+  }
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     const name = document.getElementById("r-name").value.trim();
     if (!name) { toast("Cuéntanos tu nombre"); return; }
+    const note = document.getElementById("r-note").value.trim();
 
-    // persist locally (prototype)
-    const entry = {
-      name,
-      attending,
-      guests: document.getElementById("r-guests").value,
-      note: document.getElementById("r-note").value.trim(),
-      at: new Date().toISOString()
-    };
+    const data = { name, attending, acompanante, mensaje: note, at: new Date().toISOString() };
+
+    /* guarda localmente como respaldo */
     try {
       const all = JSON.parse(localStorage.getItem("lya_rsvps") || "[]");
-      all.push(entry);
+      all.push(data);
       localStorage.setItem("lya_rsvps", JSON.stringify(all));
-    } catch (err) {}
+    } catch (_) {}
 
-    // hide fields, show confirmation
+    /* envía al Google Form en segundo plano */
+    sendToGoogleForm(data);
+
+    /* muestra confirmación en pantalla */
     [...form.children].forEach((c) => { if (c !== done) c.style.display = "none"; });
-    if (attending === "yes") {
+    if (attending === "Si") {
       doneTitle.textContent = "¡Nos vemos pronto!";
-      doneMsg.textContent = "Tu lugar quedó confirmado, " + name.split(" ")[0] + ". Te esperamos el 5 de agosto.";
+      doneMsg.textContent   = "Tu lugar quedó confirmado, " + name.split(" ")[0] + ". Te esperamos el 15 de agosto.";
     } else {
       doneTitle.textContent = "Te vamos a extrañar";
-      doneMsg.textContent = "Gracias por avisarnos, " + name.split(" ")[0] + ". Estarás con nosotros en el corazón.";
+      doneMsg.textContent   = "Gracias por avisarnos, " + name.split(" ")[0] + ". Estarás con nosotros en el corazón.";
     }
     done.classList.add("show");
   });
