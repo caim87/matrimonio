@@ -72,7 +72,7 @@
       <div class="rule"><span class="dot"></span></div>
     </div>
     <div class="story-photo reveal">
-      <img src="src/foto-13.jpg" loading="lazy" alt="Leonardo y Angélica">
+      <img src="src/gallery/foto_historia.jpg" loading="lazy" alt="Leonardo y Angélica">
     </div>
     <div class="reveal">
       <p>Nos conocimos cuando menos lo buscábamos, y desde la primera conversación supimos que el tiempo a tu lado se sentía distinto: más cálido, más nuestro.</p>
@@ -89,20 +89,17 @@
       <div class="rule"><span class="dot"></span></div>
     </div>
     <div class="gal-masonry" id="galGrid">
-      <img src="src/foto-01.jpg" loading="lazy" alt="Leonardo y Angélica — pre-boda">
-      <img src="src/foto-06.jpg" loading="lazy" alt="Leonardo y Angélica — pre-boda">
-      <img src="src/foto-02.jpg" loading="lazy" alt="Leonardo y Angélica — pre-boda">
-      <img src="src/foto-13.jpg" loading="lazy" alt="Leonardo y Angélica — pre-boda">
-      <img src="src/foto-03.jpg" loading="lazy" alt="Leonardo y Angélica — pre-boda">
-      <img src="src/foto-09.jpg" loading="lazy" alt="Leonardo y Angélica — pre-boda">
-      <img src="src/foto-14.jpg" loading="lazy" alt="Leonardo y Angélica — pre-boda">
-      <img src="src/foto-04.jpg" loading="lazy" alt="Leonardo y Angélica — pre-boda">
-      <img src="src/foto-11.jpg" loading="lazy" alt="Leonardo y Angélica — pre-boda">
-      <img src="src/foto-05.jpg" loading="lazy" alt="Leonardo y Angélica — pre-boda">
-      <img src="src/foto-07.jpg" loading="lazy" alt="Leonardo y Angélica — pre-boda">
-      <img src="src/foto-12.jpg" loading="lazy" alt="Leonardo y Angélica — pre-boda">
-      <img src="src/foto-08.jpg" loading="lazy" alt="Leonardo y Angélica — pre-boda">
-      <img src="src/foto-10.jpg" loading="lazy" alt="Leonardo y Angélica — pre-boda">
+      <img src="src/gallery/foto_01.jpg" loading="lazy" alt="Leonardo y Angélica — pre-boda">
+      <img src="src/gallery/foto_02.jpg" loading="lazy" alt="Leonardo y Angélica — pre-boda">
+      <img src="src/gallery/foto_03.jpg" loading="lazy" alt="Leonardo y Angélica — pre-boda">
+      <img src="src/gallery/foto_04.jpg" loading="lazy" alt="Leonardo y Angélica — pre-boda">
+      <img src="src/gallery/foto_05.jpg" loading="lazy" alt="Leonardo y Angélica — pre-boda">
+      <img src="src/gallery/foto_06.jpg" loading="lazy" alt="Leonardo y Angélica — pre-boda">
+      <img src="src/gallery/foto_07.jpg" loading="lazy" alt="Leonardo y Angélica — pre-boda">
+      <img src="src/gallery/foto_08.jpg" loading="lazy" alt="Leonardo y Angélica — pre-boda">
+      <img src="src/gallery/foto_09.jpg" loading="lazy" alt="Leonardo y Angélica — pre-boda">
+      <img src="src/gallery/foto_10.jpg" loading="lazy" alt="Leonardo y Angélica — pre-boda">
+      <img src="src/gallery/foto_11.jpg" loading="lazy" alt="Leonardo y Angélica — pre-boda">
     </div>
   </section>
 
@@ -149,6 +146,24 @@
       </div>
       <h3>Todos de negro</h3>
       <p>Te pedimos vestir totalmente de <strong style="color:var(--cream)">negro</strong>. El blanco queda reservado para los novios. Acompáñanos a crear una noche elegante bajo luces cálidas.</p>
+    </div>
+  </section>
+
+  <!-- ============ REGALO ============ -->
+  <section id="regalo" data-screen-label="Regalo">
+    <div class="reveal">
+      <div class="kicker warm">El detalle</div>
+      <h2 class="title">Lluvia de <em>sobres</em></h2>
+      <div class="rule"><span class="dot"></span></div>
+    </div>
+    <div class="regalo-card reveal">
+      <div class="sobre-icon">
+        <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="5" width="20" height="14" rx="2"/>
+          <polyline points="2,5 12,13 22,5"/>
+        </svg>
+      </div>
+      <p class="lede" style="text-align:center;margin:0;">En lugar de regalos, hemos elegido la <strong style="color:var(--cream)">lluvia de sobres</strong>. Tu aporte nos ayudará a construir los sueños de nuestro nuevo hogar. ¡Gracias por tu generosidad!</p>
     </div>
   </section>
 
@@ -218,12 +233,17 @@
       <p class="rsvp-notice">Cada invitado debe confirmar su asistencia de forma individual.</p>
 
       <div class="field">
-        <label for="r-name">Nombre y apellido</label>
+        <label for="r-name">Nombre y apellido <span class="req">*</span></label>
         <input type="text" id="r-name" placeholder="Tu nombre completo" required>
       </div>
 
       <div class="field">
-        <label>¿Asistirás?</label>
+        <label for="r-cedula">Cédula de ciudadanía <span class="req">*</span></label>
+        <input type="text" id="r-cedula" placeholder="Número de cédula" inputmode="numeric" pattern="[0-9]+" required>
+      </div>
+
+      <div class="field">
+        <label>¿Asistirás? <span class="req">*</span></label>
         <div class="choice" id="attendChoice">
           <button type="button" data-v="Si" class="on">Sí, ahí estaré</button>
           <button type="button" data-v="No">No podré</button>
@@ -258,8 +278,11 @@
   <nav class="nav" id="nav">
     <a href="#inicio" data-sec="inicio" title="Inicio" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg></a>
     <a href="#video" data-sec="video" title="Video"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><polygon points="9 7 17 12 9 17 9 7"/><rect x="3" y="4" width="18" height="16" rx="1"/></svg></a>
+    <a href="#historia" data-sec="historia" title="Nuestra historia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></a>
     <a href="#galeria" data-sec="galeria" title="Galería"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="9" r="1.6"/><path d="M21 16l-5-5L5 21"/></svg></a>
     <a href="#detalles" data-sec="detalles" title="Detalles"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 21s-7-5.5-7-11a7 7 0 0114 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.4"/></svg></a>
+    <a href="#vestimenta" data-sec="vestimenta" title="Vestimenta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M20.38 3.46L16 2a4 4 0 01-8 0L3.62 3.46a2 2 0 00-1.34 2.23l.58 3.57a1 1 0 00.99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 002-2V10h2.15a1 1 0 00.99-.84l.58-3.57a2 2 0 00-1.34-2.23z"/></svg></a>
+    <a href="#regalo" data-sec="regalo" title="Regalo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2" y="7" width="20" height="14" rx="1"/><path d="M16 7V5a2 2 0 0 0-4 0v2"/><path d="M8 7V5a2 2 0 0 1 4 0v2"/><line x1="12" y1="7" x2="12" y2="21"/></svg></a>
     <a href="#musica" data-sec="musica" title="Música"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg></a>
     <a href="#fotos" data-sec="fotos" title="Fotos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="6" width="18" height="14" rx="1"/><circle cx="12" cy="13" r="3.4"/></svg></a>
     <a href="#rsvp" data-sec="rsvp" title="Confirmar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M5 13l4 4L19 7"/></svg></a>

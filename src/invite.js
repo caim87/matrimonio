@@ -25,10 +25,10 @@ const CONFIG = {
   ─────────────────────────────────────────────────────────────── */
   gFormId: "1FAIpQLSde1TdE1HiPcA9dCkReuqilTFY0k887hFKNUnV45xC0Q7TVOg",
   gEntry: {
-    nombre:       457475467,   // "Nombre y apellido"
-    asistira:     893230956,   // "¿Asistirás?"
-    acompanante:  386733171,   // "Vienes con tu acompañante"
-    mensaje:      1517730850,  // "Mensaje para los novios"
+    nombre:   457475467,
+    cedula:   1531362986,
+    asistira: 893230956,
+    mensaje:  1517730850,
   }
 };
 
@@ -197,6 +197,7 @@ const toast = (function () {
     if (!g.nombre) return;
     const params = new URLSearchParams();
     params.append("entry." + g.nombre,   data.name);
+    params.append("entry." + g.cedula,   data.cedula);
     params.append("entry." + g.asistira, data.attending);
     if (data.mensaje) params.append("entry." + g.mensaje, data.mensaje);
     const url = "https://docs.google.com/forms/d/e/" + CONFIG.gFormId + "/formResponse";
@@ -210,10 +211,12 @@ const toast = (function () {
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
-    const name = document.getElementById("r-name").value.trim();
-    if (!name) { toast("Cuéntanos tu nombre"); return; }
+    const name   = document.getElementById("r-name").value.trim();
+    const cedula = document.getElementById("r-cedula").value.trim();
+    if (!name)   { toast("Cuéntanos tu nombre"); return; }
+    if (!cedula) { toast("Ingresa tu cédula"); return; }
     const note = document.getElementById("r-note").value.trim();
-    const data = { name, attending, mensaje: note, at: new Date().toISOString() };
+    const data = { name, cedula, attending, mensaje: note, at: new Date().toISOString() };
 
     try {
       const all = JSON.parse(localStorage.getItem("lya_rsvps") || "[]");
