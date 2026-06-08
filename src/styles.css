@@ -498,7 +498,20 @@ image-slot {
 .btn-line:hover { background: var(--basil-deep); border-color: var(--basil); }
 .btn-line.full { display: flex; justify-content: center; width: 100%; }
 
-/* dress code */
+/* dress code image frame */
+.dress-img-frame {
+  margin-top: 18px;
+  border: 1px solid var(--line);
+  padding: 8px;
+  background: rgba(255,255,255,0.012);
+}
+.dress-img-frame img {
+  width: 100%;
+  display: block;
+  border: 1px solid var(--line-soft);
+}
+
+/* dress code (legacy card — kept for reference) */
 .dress {
   text-align: center;
   border: 1px solid var(--line);
