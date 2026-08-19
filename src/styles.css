@@ -4,16 +4,16 @@
    ============================================================ */
 
 :root {
-  --bg: #0B0D0A;
-  --bg-2: #10130D;
-  --bg-3: #161A12;
-  --ink: #060705;
+  --bg: #59643A;
+  --bg-2: #4C562F;
+  --bg-3: #414A28;
+  --ink: #3A4226;
   --cream: #F3F0E6;
   --cream-dim: rgba(243, 240, 230, 0.60);
   --cream-faint: rgba(243, 240, 230, 0.34);
-  --basil: #8A9C6E;
-  --basil-deep: #4C5A3A;
-  --basil-line: rgba(138, 156, 110, 0.34);
+  --basil: #D8CBA0;
+  --basil-deep: #454E2B;
+  --basil-line: rgba(216, 203, 160, 0.38);
   --warm: #E7C088;
   --warm-soft: rgba(231, 192, 136, 0.16);
   --line: rgba(243, 240, 230, 0.13);
@@ -553,7 +553,7 @@ image-slot {
 }
 .spotify-card .cover {
   width: 64px; height: 64px; flex: none;
-  background: linear-gradient(135deg, var(--basil-deep), #1b1f15);
+  background: linear-gradient(135deg, var(--basil-deep), #333a1f);
   display: flex; align-items: center; justify-content: center;
 }
 .spotify-card .cover svg { color: var(--basil); }
@@ -610,7 +610,7 @@ image-slot {
   cursor: pointer;
   transition: background .3s, border-color .3s;
 }
-.drop:hover, .drop.drag { background: rgba(138,156,110,0.10); border-color: var(--basil); }
+.drop:hover, .drop.drag { background: rgba(243,240,230,0.08); border-color: var(--basil); }
 .drop .ico { color: var(--basil); margin-bottom: 14px; }
 .drop .big { font-family: var(--font-display); font-size: 24px; margin-bottom: 6px; }
 .drop .small { font-size: 13px; color: var(--cream-dim); }
