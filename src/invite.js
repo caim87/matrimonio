@@ -1,5 +1,5 @@
 /* ============================================================
-   Leonardo & Angélica — interacciones
+   Camilo & Martha — interacciones
    ============================================================ */
 
 /* ---- CONFIGURA AQUÍ ------------------------------------------------
@@ -7,7 +7,7 @@
 -------------------------------------------------------------------- */
 const CONFIG = {
   // Fecha y hora del evento (ceremonia)
-  weddingDate: new Date("2026-08-15T17:00:00-05:00"),
+  weddingDate: new Date("2026-11-28T17:00:00-05:00"),
   // Enlace a tu playlist colaborativa de Spotify
   spotifyUrl: "https://open.spotify.com/playlist/5w1EkNrIYpqblcaqFLx970?si=96ef5331b9884037",
   // Enlace de un video Save the Date (YouTube/Vimeo embed o .mp4). Déjalo vacío para usar solo el póster.
@@ -229,7 +229,7 @@ const toast = (function () {
     [...form.children].forEach((c) => { if (c !== done) c.style.display = "none"; });
     if (attending === "Si") {
       doneTitle.textContent = "¡Nos vemos pronto!";
-      doneMsg.textContent   = "Tu lugar quedó confirmado, " + name.split(" ")[0] + ". Te esperamos el 15 de agosto.";
+      doneMsg.textContent   = "Tu lugar quedó confirmado, " + name.split(" ")[0] + ". Te esperamos el 28 de noviembre.";
     } else {
       doneTitle.textContent = "Te vamos a extrañar";
       doneMsg.textContent   = "Gracias por avisarnos, " + name.split(" ")[0] + ". Estarás con nosotros en el corazón.";
