@@ -23,14 +23,11 @@ const CONFIG = {
      4. El enlace tendrá ?entry.XXXXXXX=... — esos son los IDs
      Reemplaza los 0 de abajo con cada número.
   ─────────────────────────────────────────────────────────────── */
-  // PENDIENTE: pega aquí los datos de TU Google Form (ver instrucciones abajo).
-  // Mientras esté vacío, el RSVP guarda la confirmación localmente pero NO envía a nadie.
-  gFormId: "",
+  // Google Form propio de Camilo & Martha (respuestas llegan a su cuenta).
+  gFormId: "1FAIpQLScggSSSYzUS8_qSlhgld2aohZuqCj8iJGnNGCfQ_sXMqRFx9g",
   gEntry: {
-    nombre:   0,
-    cedula:   0,
-    asistira: 0,
-    mensaje:  0,
+    nombre:   1165370447,
+    asistira: 2061193623,
   }
 };
 
@@ -199,9 +196,7 @@ const toast = (function () {
     if (!g.nombre) return;
     const params = new URLSearchParams();
     params.append("entry." + g.nombre,   data.name);
-    params.append("entry." + g.cedula,   data.cedula);
     params.append("entry." + g.asistira, data.attending);
-    if (data.mensaje) params.append("entry." + g.mensaje, data.mensaje);
     const url = "https://docs.google.com/forms/d/e/" + CONFIG.gFormId + "/formResponse";
     fetch(url, {
       method:  "POST",
@@ -214,11 +209,8 @@ const toast = (function () {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     const name   = document.getElementById("r-name").value.trim();
-    const cedula = document.getElementById("r-cedula").value.trim();
     if (!name)   { toast("Cuéntanos tu nombre"); return; }
-    if (!cedula) { toast("Ingresa tu cédula"); return; }
-    const note = document.getElementById("r-note").value.trim();
-    const data = { name, cedula, attending, mensaje: note, at: new Date().toISOString() };
+    const data = { name, attending, at: new Date().toISOString() };
 
     try {
       const all = JSON.parse(localStorage.getItem("lya_rsvps") || "[]");
