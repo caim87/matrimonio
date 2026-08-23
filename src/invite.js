@@ -8,12 +8,12 @@
 const CONFIG = {
   // Fecha y hora del evento (ceremonia)
   weddingDate: new Date("2026-11-28T17:00:00-05:00"),
-  // Enlace a tu playlist colaborativa de Spotify
-  spotifyUrl: "https://open.spotify.com/playlist/5w1EkNrIYpqblcaqFLx970?si=96ef5331b9884037",
+  // Enlace a tu playlist colaborativa de Spotify (sección oculta por ahora)
+  spotifyUrl: "",
   // Enlace de un video Save the Date (YouTube/Vimeo embed o .mp4). Déjalo vacío para usar solo el póster.
   videoEmbedUrl: "",
-  // Álbum compartido de Google Fotos para que los invitados suban y vean fotos
-  albumUrl: "https://photos.app.goo.gl/wvn5RZgJannDmine9",
+  // Álbum compartido de Google Fotos para que los invitados suban y vean fotos (sección oculta por ahora)
+  albumUrl: "",
 
   /* ── Google Form (RSVP) ──────────────────────────────────────────
      Para obtener los entry IDs:
@@ -23,12 +23,14 @@ const CONFIG = {
      4. El enlace tendrá ?entry.XXXXXXX=... — esos son los IDs
      Reemplaza los 0 de abajo con cada número.
   ─────────────────────────────────────────────────────────────── */
-  gFormId: "1FAIpQLSde1TdE1HiPcA9dCkReuqilTFY0k887hFKNUnV45xC0Q7TVOg",
+  // PENDIENTE: pega aquí los datos de TU Google Form (ver instrucciones abajo).
+  // Mientras esté vacío, el RSVP guarda la confirmación localmente pero NO envía a nadie.
+  gFormId: "",
   gEntry: {
-    nombre:   457475467,
-    cedula:   1531362986,
-    asistira: 893230956,
-    mensaje:  1517730850,
+    nombre:   0,
+    cedula:   0,
+    asistira: 0,
+    mensaje:  0,
   }
 };
 

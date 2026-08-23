@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Camilo & Martha · 28.11.2026</title>
+<link rel="icon" type="image/png" href="src/favicon.png">
+<link rel="apple-touch-icon" href="src/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&family=Marcellus&display=swap" rel="stylesheet">
@@ -27,6 +29,9 @@
   </div>
 
 <div class="shell">
+
+  <!-- ============ GATOS FLOTANTES (decoración animada) ============ -->
+  <div class="floating-cats" id="floatingCats" aria-hidden="true"></div>
 
   <!-- ============ HERO ============ -->
   <section class="hero" id="inicio" data-screen-label="Portada">
@@ -84,13 +89,33 @@
   <!-- ============ STORY ============ -->
   <section class="story" id="historia" data-screen-label="Historia">
     <div class="reveal">
-      <div class="kicker">Nuestra historia</div>
-      <h2 class="title">Cómo <em>empezó</em> todo</h2>
+      <h2 class="title">Nuestra <em>historia</em></h2>
       <div class="rule"><span class="dot"></span></div>
     </div>
+    <!-- TIMELINE — reemplaza fechas y textos por los reales de Camilo & Martha -->
+    <div class="timeline reveal">
+      <div class="tl-item">
+        <div class="tl-date">Marzo 2019</div>
+        <h3 class="tl-title">Nos conocimos</h3>
+        <p class="tl-text">Una tarde en que menos lo buscábamos. Una conversación que terminó al amanecer.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Junio 2019</div>
+        <h3 class="tl-title">Primera cita</h3>
+        <p class="tl-text">Café, una caminata larga y la promesa de seguir viéndonos.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Enero 2025</div>
+        <h3 class="tl-title">La propuesta</h3>
+        <p class="tl-text">Entre risas y un anillo, un sí que lo cambió todo.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Noviembre 2026</div>
+        <h3 class="tl-title">El gran día</h3>
+        <p class="tl-text">Llegó el día que esperamos. Queremos celebrarlo rodeados de quienes más queremos.</p>
+      </div>
+    </div>
     <div class="reveal">
-      <p>Nos conocimos cuando menos lo buscábamos, y desde la primera conversación supimos que el tiempo a tu lado se sentía distinto: más cálido, más nuestro.</p>
-      <p>Después de años de viajes, risas, planes y café compartido al amanecer, decidimos dar el paso más bonito de todos. Queremos celebrarlo rodeados de las personas que han caminado con nosotros.</p>
       <p class="sign">Con todo nuestro amor, C &amp; M</p>
     </div>
   </section>
@@ -129,16 +154,17 @@
     <div class="event reveal">
       <h3>Ceremonia</h3>
       <div class="ev-time">5:00 PM · Sábado 28 de Noviembre</div>
-      <div class="ev-place"><strong>Finca Villa Jardín</strong><br>Calle la Españolita · Piedecuesta, Santander</div>
-      <a class="btn-line" href="https://www.google.com/maps/place/Villa+Jard%C3%ADn+Piedecuesta/@7.0123171,-73.0640493,16.28z/data=!4m14!1m7!3m6!1s0x8e6847145314aefb:0xa504288c87a45af8!2sVilla+Jard%C3%ADn+Piedecuesta!8m2!3d7.0123934!4d-73.0607443!16s%2Fg%2F11bw20s1qb!3m5!1s0x8e6847145314aefb:0xa504288c87a45af8!8m2!3d7.0123934!4d-73.0607443!16s%2Fg%2F11bw20s1qb" target="_blank" rel="noopener">
-        Cómo llegar →
-      </a>
     </div>
 
     <div class="event reveal">
       <div class="ev-ico">Celebración</div>
       <h3>Recepción &amp; fiesta</h3>
       <div class="ev-time">7:00 PM · hasta el amanecer</div>
+    </div>
+
+    <!-- Ubicación única: ceremonia y fiesta son en el mismo lugar -->
+    <div class="event reveal">
+      <div class="ev-ico">Ubicación</div>
       <div class="ev-place"><strong>Finca Villa Jardín</strong><br>Calle la Españolita · Piedecuesta, Santander</div>
       <a class="btn-line" href="https://www.google.com/maps/place/Villa+Jard%C3%ADn+Piedecuesta/@7.0123171,-73.0640493,16.28z/data=!4m14!1m7!3m6!1s0x8e6847145314aefb:0xa504288c87a45af8!2sVilla+Jard%C3%ADn+Piedecuesta!8m2!3d7.0123934!4d-73.0607443!16s%2Fg%2F11bw20s1qb!3m5!1s0x8e6847145314aefb:0xa504288c87a45af8!8m2!3d7.0123934!4d-73.0607443!16s%2Fg%2F11bw20s1qb" target="_blank" rel="noopener">
         Cómo llegar →
@@ -176,7 +202,8 @@
   </section>
 
   <!-- ============ PLAYLIST ============ -->
-  <section id="musica" data-screen-label="Playlist">
+  <!-- OCULTA: la playlist de Spotify era del amigo. Cuando tengas la tuya, cambia CONFIG.spotifyUrl y quita el style. -->
+  <section id="musica" data-screen-label="Playlist" style="display:none">
     <div class="reveal">
       <div class="kicker">La banda sonora</div>
       <h2 class="title">Arma la <em>fiesta</em></h2>
@@ -204,7 +231,8 @@
   </section>
 
   <!-- ============ GUEST UPLOAD ============ -->
-  <section id="fotos" data-screen-label="Fotos de invitados">
+  <!-- OCULTA: el álbum de Google Fotos era del amigo. Cuando tengas el tuyo, cambia CONFIG.albumUrl y quita el style. -->
+  <section id="fotos" data-screen-label="Fotos de invitados" style="display:none">
     <div class="reveal">
       <div class="kicker warm">El muro de la boda</div>
       <h2 class="title">Comparte tus <em>fotos</em></h2>
@@ -292,8 +320,8 @@
     <a href="#detalles" data-sec="detalles" title="Detalles"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 21s-7-5.5-7-11a7 7 0 0114 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.4"/></svg></a>
     <a href="#vestimenta" data-sec="vestimenta" title="Vestimenta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M20.38 3.46L16 2a4 4 0 01-8 0L3.62 3.46a2 2 0 00-1.34 2.23l.58 3.57a1 1 0 00.99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 002-2V10h2.15a1 1 0 00.99-.84l.58-3.57a2 2 0 00-1.34-2.23z"/></svg></a>
     <a href="#regalo" data-sec="regalo" title="Regalo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2" y="7" width="20" height="14" rx="1"/><path d="M16 7V5a2 2 0 0 0-4 0v2"/><path d="M8 7V5a2 2 0 0 1 4 0v2"/><line x1="12" y1="7" x2="12" y2="21"/></svg></a>
-    <a href="#musica" data-sec="musica" title="Música"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg></a>
-    <a href="#fotos" data-sec="fotos" title="Fotos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="6" width="18" height="14" rx="1"/><circle cx="12" cy="13" r="3.4"/></svg></a>
+    <a href="#musica" data-sec="musica" title="Música" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg></a>
+    <a href="#fotos" data-sec="fotos" title="Fotos" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="6" width="18" height="14" rx="1"/><circle cx="12" cy="13" r="3.4"/></svg></a>
     <a href="#rsvp" data-sec="rsvp" title="Confirmar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M5 13l4 4L19 7"/></svg></a>
   </nav>
 
@@ -329,6 +357,40 @@
 
 <script src="src/invite.js"></script>
 <script>
+/* ---- Gatos flotantes (decoración) ---- */
+(function floatingCats() {
+  const layer = document.getElementById('floatingCats');
+  if (!layer) return;
+
+  // respeta a quien prefiere menos movimiento
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const COUNT = 3;               // cuántos gatos a la vez
+  // franjas para repartir horizontalmente y que no se agrupen de un lado
+  // [min, max] en % del ancho: izquierda, centro, derecha
+  const zones = [[5, 28], [36, 58], [66, 86]];
+  for (let i = 0; i < COUNT; i++) {
+    const cat = document.createElement('img');
+    cat.src = 'src/gato.png';
+    cat.alt = '';
+    cat.className = 'cat';
+
+    const size = 30 + Math.random() * 34;          // 30–64px
+    const [zmin, zmax] = zones[i % zones.length];  // uno por franja
+    const left = zmin + Math.random() * (zmax - zmin);
+    const dur  = 20 + Math.random() * 16;          // 20–36s de recorrido (más lento y suave)
+    const delay = -Math.random() * dur;            // arranques desfasados
+    const opacity = 0.28 + Math.random() * 0.24;   // 0.28–0.52 (sutil, no tapa el texto)
+
+    cat.style.width = size + 'px';
+    cat.style.left = left + '%';
+    cat.style.animationDuration = dur + 's';
+    cat.style.animationDelay = delay + 's';
+    cat.style.setProperty('--catOpacity', opacity);
+    layer.appendChild(cat);
+  }
+})();
+
 /* ---- Sobre / carta de apertura ---- */
 (function envelope() {
   const overlay = document.getElementById('envelopeOverlay');

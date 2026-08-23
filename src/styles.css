@@ -1025,3 +1025,94 @@ image-slot {
 /* evita scroll del sitio mientras el sobre está cerrado */
 body.env-locked { overflow: hidden; }
 
+/* ============================================================
+   GATOS FLOTANTES (decoración animada)
+   ============================================================ */
+.floating-cats {
+  position: fixed;
+  inset: 0;
+  max-width: var(--maxw);
+  margin: 0 auto;        /* centrado igual que el shell */
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;            /* sobre el fondo, debajo del contenido (secciones = z-index 3) */
+}
+.floating-cats .cat {
+  position: absolute;
+  bottom: -120px;        /* arranca abajo, fuera de pantalla */
+  width: 54px;
+  height: auto;
+  opacity: 0;
+  --catOpacity: 0.8;
+  will-change: transform, opacity;
+  animation-name: catFloat;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  filter: drop-shadow(0 6px 10px rgba(46,58,42,0.18));
+}
+/* sube desde abajo hasta arriba con balanceo lateral y giro suave */
+@keyframes catFloat {
+  0%   { transform: translateY(0)      translateX(0)    rotate(-8deg); opacity: 0; }
+  8%   { opacity: var(--catOpacity); }
+  50%  { transform: translateY(-52vh)  translateX(26px) rotate(10deg); opacity: var(--catOpacity); }
+  92%  { opacity: var(--catOpacity); }
+  100% { transform: translateY(-108vh) translateX(-10px) rotate(-6deg); opacity: 0; }
+}
+
+/* ============================================================
+   TIMELINE (Nuestra historia)
+   ============================================================ */
+.timeline {
+  position: relative;
+  margin: 34px 0 10px;
+  padding-left: 30px;
+}
+/* línea vertical */
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 6px;
+  bottom: 6px;
+  width: 1.5px;
+  background: linear-gradient(var(--basil), var(--basil-line));
+}
+.tl-item {
+  position: relative;
+  padding-bottom: 30px;
+}
+.tl-item:last-child { padding-bottom: 0; }
+/* punto sobre la línea */
+.tl-item::before {
+  content: "";
+  position: absolute;
+  left: -30px;
+  top: 4px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--basil);
+  box-shadow: 0 0 0 4px var(--bg);
+}
+.tl-date {
+  font-family: var(--font-label);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 11px;
+  color: var(--warm);
+  margin-bottom: 4px;
+}
+.tl-title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 23px;
+  color: var(--cream);
+  margin-bottom: 4px;
+}
+.tl-text {
+  font-size: 14px;
+  color: var(--cream-dim);
+  line-height: 1.6;
+}
+
