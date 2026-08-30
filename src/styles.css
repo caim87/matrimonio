@@ -1,7 +1,17 @@
 /* ============================================================
-   Camilo & Martha — Invitación de matrimonio
+   Martha & Camilo — Invitación de matrimonio
    Estética: jardín botánico — crema claro + verde follaje + dorado suave
    ============================================================ */
+
+/* Fuente manuscrita para los nombres (uso personal) */
+@font-face {
+  font-family: "Pillow Talk";
+  src: url("fonts/PillowTalk.otf") format("opentype"),
+       url("fonts/PillowTalk.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
   /* Fondos claros (crema / hueso) */
@@ -215,10 +225,10 @@ h2.title em {
 
 /* --- Nombres en tipografía manuscrita (estilo referencia) --- */
 .hero .names-script {
-  font-family: "Great Vibes", var(--font-display), cursive;
+  font-family: "Pillow Talk", "Great Vibes", var(--font-display), cursive;
   font-weight: 400;
-  font-size: clamp(64px, 22vw, 108px);
-  line-height: 0.9;
+  font-size: clamp(60px, 20vw, 100px);
+  line-height: 1.0;
   letter-spacing: 0.01em;
   color: var(--cream);
   width: 100%;
