@@ -1261,6 +1261,7 @@ body.env-locked { overflow: hidden; }
   line-height: 1.7;
   color: var(--cream-dim);
   margin-bottom: 14px;
+  text-align: justify;
 }
 .dress-code .dc-text:last-child { margin-bottom: 0; }
 .dress-code .dc-text strong { color: var(--cream); font-weight: 500; }
