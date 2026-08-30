@@ -8,7 +8,7 @@
 <link rel="apple-touch-icon" href="src/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&family=Marcellus&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Great+Vibes&family=Jost:wght@300;400;500&family=Marcellus&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="src/styles.css">
 </head>
 <body>
@@ -36,18 +36,24 @@
   <!-- ============ HERO ============ -->
   <section class="hero" id="inicio" data-screen-label="Portada">
     <div class="frame"></div>
-    <div class="est">Nos casamos</div>
-    <h1 class="names">
-      Camilo
+    <div class="est">Nos vamos a casar</div>
+    <h1 class="names names-script" id="heroNames" aria-label="Camilo & Martha">
+      <span class="line-1">Camilo</span>
       <span class="amp">&amp;</span>
-      Martha
+      <span class="line-2">Martha</span>
     </h1>
+    <div class="dia-especial">
+      <span class="de-line"></span>
+      <span class="de-text">Nuestro día especial</span>
+      <span class="de-line"></span>
+    </div>
     <div class="meta">
       <span>Piedecuesta</span>
       <span class="sep">◇</span>
       <span>28 · 11 · 2026</span>
     </div>
 
+    <div class="cd-titulo">¡Faltan!</div>
     <div class="countdown" id="countdown" aria-label="Cuenta regresiva">
       <div class="cd-cell"><div class="cd-num" id="cd-d">—</div><div class="cd-lab">Días</div></div>
       <div class="cd-cell"><div class="cd-num" id="cd-h">—</div><div class="cd-lab">Horas</div></div>
@@ -396,6 +402,7 @@
     opened = true;
     overlay.classList.add('open');
     document.body.classList.remove('env-locked');
+    document.body.classList.add('revealed');  // dispara la escritura de los nombres
     // intenta iniciar la música al abrir (gesto del usuario)
     const audio = document.getElementById('bgMusic');
     if (audio) {
