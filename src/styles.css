@@ -1260,4 +1260,8 @@ body.env-locked { overflow: hidden; }
   font-size: 15px;
   line-height: 1.7;
   color: var(--cream-dim);
+  margin-bottom: 14px;
 }
+.dress-code .dc-text:last-child { margin-bottom: 0; }
+.dress-code .dc-text strong { color: var(--cream); font-weight: 500; }
+.dress-code .dc-text em { font-style: italic; }
