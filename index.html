@@ -391,6 +391,14 @@
 
 /* ---- Sobre / carta de apertura ---- */
 (function envelope() {
+  // evita que el navegador restaure una posición de scroll previa
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  // si la URL trae un #hash (que saltaría a una sección), lo limpiamos
+  if (location.hash) {
+    history.replaceState(null, '', location.pathname + location.search);
+  }
+  window.scrollTo(0, 0);
+
   const overlay = document.getElementById('envelopeOverlay');
   const seal    = document.getElementById('waxSeal');
   const env     = document.getElementById('envelope');
@@ -402,9 +410,15 @@
   function open() {
     if (opened) return;
     opened = true;
+    // asegura empezar SIEMPRE desde el inicio (portada)
+    window.scrollTo(0, 0);
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
     overlay.classList.add('open');
     document.body.classList.remove('env-locked');
     document.body.classList.add('revealed');  // dispara la escritura de los nombres
+    // reafirma el tope tras liberar el scroll
+    requestAnimationFrame(() => window.scrollTo(0, 0));
     // intenta iniciar la música al abrir (gesto del usuario)
     const audio = document.getElementById('bgMusic');
     if (audio) {
