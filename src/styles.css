@@ -250,7 +250,7 @@ h2.title em {
   display: block;
   font-style: normal;
   font-size: clamp(38px, 12vw, 60px);
-  color: var(--warm);
+  color: #8B4A2F;
   margin: -2px 0;
 }
 .hero .names-script .line-1,
@@ -1103,15 +1103,15 @@ image-slot {
   opacity: 0;
 }
 .wax-mono {
-  font-family: var(--font-display);
-  font-size: 40px;
-  font-weight: 500;
+  font-family: "Pillow Talk", var(--font-display), cursive;
+  font-size: 46px;
+  font-weight: 400;
   color: #6B4E1A;
   letter-spacing: 0.02em;
   text-shadow: 0 1px 1px rgba(255,255,255,0.25);
   line-height: 1;
 }
-.wax-amp { font-style: italic; font-size: 24px; margin: 0 1px; }
+.wax-amp { font-size: 30px; margin: 0 1px; }
 
 /* --- Botoncito "Toca el sello" debajo del sello --- */
 .env-hint {
