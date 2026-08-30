@@ -239,9 +239,9 @@ h2.title em {
 .hero .names-script .line-2 {
   opacity: 0;
 }
-body.revealed .hero .names-script .line-1 { animation: writeIn 1s ease forwards .15s; }
-body.revealed .hero .names-script .amp    { animation: writeIn .7s ease forwards .95s; }
-body.revealed .hero .names-script .line-2 { animation: writeIn 1s ease forwards 1.25s; }
+body.revealed .hero .names-script .line-1 { animation: writeIn 1.1s ease forwards .55s; }
+body.revealed .hero .names-script .amp    { animation: writeIn .8s ease forwards 1.5s; }
+body.revealed .hero .names-script .line-2 { animation: writeIn 1.1s ease forwards 1.95s; }
 @keyframes writeIn {
   from { opacity: 0; transform: translateY(14px) rotate(-2deg); }
   to   { opacity: 1; transform: none; }
@@ -998,10 +998,10 @@ image-slot {
 /* --- El sobre --- */
 .envelope {
   position: relative;
-  width: 300px;
-  height: 210px;
-  max-width: 82vw;
-  filter: drop-shadow(0 24px 40px rgba(46,58,42,0.28));
+  width: 380px;
+  height: 270px;
+  max-width: 90vw;
+  filter: drop-shadow(0 26px 46px rgba(46,58,42,0.30));
   cursor: pointer;
   transition: transform .6s ease;
 }
@@ -1050,7 +1050,7 @@ image-slot {
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
   z-index: 5;
-  width: 84px; height: 84px;
+  width: 104px; height: 104px;
   border-radius: 50%;
   border: none;
   cursor: pointer;
@@ -1079,7 +1079,7 @@ image-slot {
 }
 .wax-mono {
   font-family: var(--font-display);
-  font-size: 27px;
+  font-size: 33px;
   font-weight: 500;
   color: #6B4E1A;
   letter-spacing: 0.02em;
@@ -1197,3 +1197,44 @@ body.env-locked { overflow: hidden; }
   line-height: 1.6;
 }
 
+
+/* ============================================================
+   CÓDIGO DE VESTIMENTA (estilo referencia)
+   ============================================================ */
+.dress-code {
+  text-align: center;
+  max-width: 380px;
+  margin: 0 auto;
+}
+.dress-code .dc-icon {
+  display: inline-flex;
+  color: var(--basil);
+  margin-bottom: 20px;
+}
+.dress-code .dc-icon svg { width: 46px; height: 46px; }
+.dress-code .dc-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-style: italic;
+  font-size: clamp(30px, 8vw, 40px);
+  color: var(--cream);
+  line-height: 1.1;
+}
+.dress-code .dc-rule {
+  width: 130px;
+  height: 1px;
+  background: var(--basil-line);
+  margin: 18px auto 20px;
+}
+.dress-code .dc-sub {
+  font-family: var(--font-label);
+  letter-spacing: 0.04em;
+  font-size: 17px;
+  color: var(--cream);
+  margin-bottom: 14px;
+}
+.dress-code .dc-text {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--cream-dim);
+}
