@@ -1005,7 +1005,7 @@ image-slot {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #DCE3CE;
+  background: #2b241d;
   transition: opacity .9s ease, visibility .9s ease;
 }
 .envelope-overlay.open {
@@ -1013,110 +1013,33 @@ image-slot {
   visibility: hidden;
   pointer-events: none;
 }
+/* --- Escena = botón que ocupa toda la pantalla (foto del sobre) --- */
 .env-scene {
   position: relative;
   width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  display: block;
 }
 
-/* --- El sobre: ocupa TODA la pantalla (estilo referencia) --- */
+/* --- El sobre = foto de fondo (cover, centrada) --- */
 .envelope {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  cursor: pointer;
-  transition: transform .6s ease;
+  background: url('sobre-kraft.jpg') center/cover no-repeat;
+  transition: transform 1s ease, opacity 1s ease;
 }
-.envelope-overlay.open .envelope { transform: scale(1.04); opacity: 0; }
+.envelope-overlay.open .envelope { transform: scale(1.06); opacity: 0; }
 
-/* cuerpo del sobre (salvia claro) */
-.env-body {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(160deg, #DCE3CE, #CBD4B8);
-}
-/* bolsillo triangular inferior */
-.env-pocket {
-  position: absolute;
-  inset: 0;
-  z-index: 3;
-  background:
-    linear-gradient(to bottom right, transparent 49.6%, #D2DAC0 50%),
-    linear-gradient(to bottom left, transparent 49.6%, #D2DAC0 50%);
-  background-size: 50% 100%, 50% 100%;
-  background-position: left, right;
-  background-repeat: no-repeat;
-  clip-path: polygon(0 0, 50% 55%, 100% 0, 100% 100%, 0 100%);
-}
-/* solapa superior (se abre) */
-.env-flap {
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 55%;
-  z-index: 4;
-  background: linear-gradient(160deg, #D2DAC0, #BFC9AA);
-  clip-path: polygon(0 0, 100% 0, 50% 100%);
-  transform-origin: top center;
-  transition: transform .8s ease, z-index 0s .4s;
-  border-bottom: 1px solid rgba(94,117,83,0.20);
-}
-.envelope-overlay.open .env-flap {
-  transform: rotateX(180deg);
-  z-index: 1;
-}
-
-/* --- Sello de cera dorado --- */
-.wax-seal {
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 5;
-  width: 128px; height: 128px;
-  border-radius: 50%;
-  border: none;
-  cursor: pointer;
-  background:
-    radial-gradient(circle at 38% 32%, #E6C892, #C9A961 55%, #A9863F 100%);
-  box-shadow:
-    0 6px 14px rgba(90,64,20,0.45),
-    inset 0 2px 4px rgba(255,255,255,0.4),
-    inset 0 -3px 6px rgba(90,64,20,0.4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform .5s ease, opacity .5s ease;
-}
-.wax-seal::before {
-  content: "";
-  position: absolute;
-  inset: 9px;
-  border-radius: 50%;
-  border: 1.5px solid rgba(90,64,20,0.35);
-}
-.wax-seal:hover { transform: translate(-50%, -50%) scale(1.06); }
-.envelope-overlay.open .wax-seal {
-  transform: translate(-50%, -50%) scale(.3);
-  opacity: 0;
-}
-.wax-mono {
-  font-family: "Pillow Talk", var(--font-display), cursive;
-  font-size: 46px;
-  font-weight: 400;
-  color: #6B4E1A;
-  letter-spacing: 0.02em;
-  text-shadow: 0 1px 1px rgba(255,255,255,0.25);
-  line-height: 1;
-}
-.wax-amp { font-size: 30px; margin: 0 1px; }
-
-/* --- Botoncito "Toca el sello" debajo del sello --- */
+/* --- Botón "Toca el sobre" abajo --- */
 .env-hint {
   position: absolute;
-  top: calc(50% + 130px);
+  bottom: 8%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 6;
@@ -1125,33 +1048,17 @@ image-slot {
   text-transform: uppercase;
   font-size: 12px;
   color: #F3F0E6;
-  background: rgba(46,58,42,0.55);
-  padding: 9px 20px;
+  background: rgba(46,38,29,0.70);
+  padding: 11px 24px;
   border-radius: 100px;
   white-space: nowrap;
   animation: envPulse 2.4s ease-in-out infinite;
 }
 .envelope-overlay.open .env-hint { opacity: 0; transition: opacity .3s; }
 @keyframes envPulse {
-  0%, 100% { opacity: 0.72; }
+  0%, 100% { opacity: 0.78; }
   50%      { opacity: 1; }
 }
-
-/* --- Frase "Te invitamos a nuestro casamiento" --- */
-.env-invite {
-  position: absolute;
-  bottom: 12%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90%;
-  text-align: center;
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: clamp(22px, 6.5vw, 30px);
-  color: var(--cream);
-  z-index: 6;
-}
-.envelope-overlay.open .env-invite { opacity: 0; transition: opacity .3s; }
 
 /* evita scroll del sitio mientras el sobre está cerrado */
 body.env-locked { overflow: hidden; }
