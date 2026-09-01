@@ -120,8 +120,10 @@ h2.title {
   font-family: "Pillow Talk", var(--font-display), cursive;
   font-weight: 400;
   font-size: clamp(46px, 15vw, 66px);
-  line-height: 1.05;
+  line-height: 1.25;
   letter-spacing: 0.01em;
+  padding-top: 0.12em;
+  overflow: visible;
 }
 
 h2.title em {
@@ -241,10 +243,16 @@ h2.title em {
   font-family: "Pillow Talk", "Great Vibes", var(--font-display), cursive;
   font-weight: 400;
   font-size: clamp(60px, 20vw, 100px);
-  line-height: 1.0;
+  line-height: 1.22;
   letter-spacing: 0.01em;
   color: var(--cream);
   width: 100%;
+  padding-top: 0.12em;
+  overflow: visible;
+}
+.hero .names-script .line-1,
+.hero .names-script .line-2 {
+  padding-top: 0.08em;   /* aire para los trazos altos de la fuente */
 }
 .hero .names-script .amp {
   display: block;
@@ -1175,7 +1183,9 @@ body.env-locked { overflow: hidden; }
   font-style: normal;
   font-size: clamp(40px, 11vw, 54px);
   color: var(--cream);
-  line-height: 1.1;
+  line-height: 1.25;
+  padding-top: 0.12em;
+  overflow: visible;
 }
 .dress-code .dc-rule {
   width: 130px;
