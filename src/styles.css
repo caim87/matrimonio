@@ -230,10 +230,11 @@ h2.title em {
   letter-spacing: 0.005em;
   width: 100%;
 }
-.hero .amp {
+.hero .line-3 {
   display: block;
   font-style: italic;
   font-size: clamp(30px, 9vw, 44px);
+  line-height: 0.94;
   color: var(--warm);
   margin: 6px 0;
 }
@@ -251,10 +252,11 @@ h2.title em {
   overflow: visible;
 }
 .hero .names-script .line-1,
-.hero .names-script .line-2 {
+.hero .names-script .line-2,
+.hero .names-script .line-3 {
   padding-top: 0.08em;   /* aire para los trazos altos de la fuente */
 }
-.hero .names-script .amp {
+.hero .names-script .line-3 {
   display: block;
   font-style: normal;
   font-size: clamp(38px, 12vw, 60px);
@@ -262,16 +264,17 @@ h2.title em {
   margin: -2px 0;
 }
 .hero .names-script .line-1,
-.hero .names-script .line-2 { display: block; }
+.hero .names-script .line-2,
+.hero .names-script .line-3 { display: block; }
 
 /* efecto "se escribe": las líneas entran de a poco al abrir el sobre */
 .hero .names-script .line-1,
-.hero .names-script .amp,
+.hero .names-script .line-3,
 .hero .names-script .line-2 {
   opacity: 0;
 }
 body.revealed .hero .names-script .line-1 { animation: writeIn 1.1s ease forwards .55s; }
-body.revealed .hero .names-script .amp    { animation: writeIn .8s ease forwards 1.5s; }
+body.revealed .hero .names-script .line-3 { animation: writeIn .8s ease forwards 1.5s; }
 body.revealed .hero .names-script .line-2 { animation: writeIn 1.1s ease forwards 1.95s; }
 @keyframes writeIn {
   from { opacity: 0; transform: translateY(14px) rotate(-2deg); }
