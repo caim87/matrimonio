@@ -1210,3 +1210,42 @@ body.env-locked { overflow: hidden; }
 .dress-code .dc-text:last-child { margin-bottom: 0; }
 .dress-code .dc-text strong { color: var(--cream); font-weight: 500; }
 .dress-code .dc-text em { font-style: italic; }
+
+/* ============================================================
+   CARRUSEL DE FOTOS (acordeón horizontal entre secciones)
+   ============================================================ */
+.photo-strip {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 26px var(--pad);
+  scrollbar-width: none;
+}
+.photo-strip::-webkit-scrollbar { display: none; }
+.photo-strip .ph {
+  flex: 0 0 auto;
+  width: 74%;
+  max-width: 320px;
+  aspect-ratio: 4 / 3;
+  scroll-snap-align: center;
+  overflow: hidden;
+  border-radius: 3px;
+  box-shadow: 0 8px 22px rgba(46,58,42,0.22);
+  background: var(--bg-2);
+}
+.photo-strip .ph img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/* foto vertical ocupa menos ancho y más alto */
+.photo-strip .ph.tall {
+  width: 56%;
+  max-width: 240px;
+  aspect-ratio: 3 / 4;
+}
