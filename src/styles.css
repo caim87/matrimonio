@@ -261,7 +261,9 @@ h2.title em {
   font-style: normal;
   font-size: clamp(38px, 12vw, 60px);
   color: #8B4A2F;
-  margin: -2px 0;
+  line-height: 1.3;
+  padding-top: 0.14em;
+  margin: 0;
 }
 .hero .names-script .line-1,
 .hero .names-script .line-2,
@@ -1257,4 +1259,18 @@ body.env-locked { overflow: hidden; }
   width: 56%;
   max-width: 240px;
   aspect-ratio: 3 / 4;
+}
+/* fotos redondas/planeta (360 y ojo de pez): cuadradas y completas, sin recorte */
+.photo-strip .ph.round {
+  aspect-ratio: 1 / 1;
+}
+.photo-strip .ph.round { background: transparent; box-shadow: none; }
+.photo-strip .ph.round img {
+  object-fit: cover;
+  border-radius: 50%;
+}
+/* foto que debe verse completa (sin recorte del encuadre) */
+.photo-strip .ph.full img {
+  object-fit: contain;
+  background: var(--bg-2);
 }
