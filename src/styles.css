@@ -100,7 +100,7 @@ body {
 
 section {
   position: relative;
-  padding: 92px var(--pad);
+  padding: 60px var(--pad);
   z-index: 3;
 }
 
