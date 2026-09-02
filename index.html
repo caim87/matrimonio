@@ -489,6 +489,17 @@
   /* cuando el sobre inicia la música, refleja el estado en el botón */
   window.addEventListener('music-started', () => { started = true; setPlaying(true); });
 
+  /* pausa la música al bloquear el celular / salir de la pestaña o app,
+     para que nunca siga sonando de fondo sin que la persona lo note.
+     (Los navegadores móviles no permiten reanudar audio automáticamente
+     al volver, así que al regresar queda pausada — se retoma con el botón). */
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden && !audio.paused) {
+      audio.pause();
+      setPlaying(false);
+    }
+  });
+
   /* persiste posición */
   const saved = parseFloat(localStorage.getItem('lya_music_pos') || '0');
   if (saved > 0 && saved < audio.duration) audio.currentTime = saved;
