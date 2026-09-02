@@ -1274,3 +1274,31 @@ body.env-locked { overflow: hidden; }
   object-fit: contain;
   background: var(--bg-2);
 }
+
+/* ============================================================
+   PHOTO STACK (fotos grandes, una debajo de la otra)
+   ============================================================ */
+.photo-stack {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  padding: 10px var(--pad) 30px;
+}
+.photo-stack .ps-item {
+  width: 78%;
+  max-width: 320px;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border-radius: 3px;
+  box-shadow: 0 10px 26px rgba(46,58,42,0.24);
+  background: var(--bg-2);
+}
+.photo-stack .ps-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
