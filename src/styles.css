@@ -1288,8 +1288,9 @@ body.env-locked { overflow: hidden; }
   padding: 10px var(--pad) 30px;
 }
 .photo-stack .ps-item {
-  width: 78%;
-  max-width: 320px;
+  width: auto;
+  max-width: 78%;
+  max-height: 62vh;
   overflow: hidden;
   border-radius: 3px;
   box-shadow: 0 10px 26px rgba(46,58,42,0.24);
@@ -1297,7 +1298,9 @@ body.env-locked { overflow: hidden; }
   line-height: 0;
 }
 .photo-stack .ps-item img {
-  width: 100%;
-  height: auto;
   display: block;
+  max-width: 100%;
+  max-height: 62vh;
+  width: auto;
+  height: auto;
 }
