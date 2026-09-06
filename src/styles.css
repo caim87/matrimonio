@@ -1225,9 +1225,10 @@ body.env-locked { overflow: hidden; }
 .quote-pillow {
   position: relative;
   z-index: 3;
-  font-family: "Pillow Talk", "Great Vibes", var(--font-display), cursive;
+  font-family: var(--font-display);
+  font-style: italic;
   font-weight: 400;
-  font-size: clamp(26px, 6.5vw, 34px);
+  font-size: clamp(24px, 6vw, 30px);
   line-height: 1.4;
   color: var(--cream);
   text-align: center;
