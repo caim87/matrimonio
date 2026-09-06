@@ -30,8 +30,8 @@
   --ink: #EAE4D5;
   /* "cream" es ahora el color de TEXTO: verde profundo botánico */
   --cream: #2E3A2A;
-  --cream-dim: rgba(46, 58, 42, 0.66);
-  --cream-faint: rgba(46, 58, 42, 0.42);
+  --cream-dim: rgba(46, 58, 42, 0.80);
+  --cream-faint: rgba(46, 58, 42, 0.58);
   /* Verdes de acento (follaje / eucalipto) */
   --basil: #5E7553;
   --basil-deep: #7E8A74;
