@@ -147,6 +147,17 @@ h2.title em {
   max-width: 34ch;
 }
 
+/* titulo centrado con linea corta (mismo estilo de "Codigo de vestimenta") */
+.title-center {
+  text-align: center;
+}
+.title-center .dc-rule {
+  width: 130px;
+  height: 1px;
+  background: var(--basil-line);
+  margin: 18px auto 0;
+}
+
 /* hairline divider with diamond */
 .rule {
   display: flex;
