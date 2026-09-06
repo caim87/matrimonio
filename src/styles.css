@@ -615,8 +615,8 @@ image-slot {
   font-weight: 700; font-size: 36px; line-height: 1.05;
   margin-bottom: 6px;
 }
-.event .ev-time { color: var(--warm); font-size: 24px; letter-spacing: 0.04em; margin-bottom: 14px; }
-.event .ev-place { color: var(--cream-dim); font-size: 24px; }
+.event .ev-time { color: #8B4A2F; font-size: 24px; letter-spacing: 0.04em; margin-bottom: 14px; }
+.event .ev-place { color: #8B4A2F; font-size: 24px; }
 .event .ev-place strong { color: var(--cream); font-weight: 400; }
 
 .btn-line {
