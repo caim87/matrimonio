@@ -1242,6 +1242,10 @@ body.env-locked { overflow: hidden; }
   color: var(--cream);
   margin-bottom: 14px;
 }
+.dress-code .dc-sub strong {
+  font-weight: 700;
+  -webkit-text-stroke: 0.6px currentColor;
+}
 .dress-code .dc-text {
   font-size: 24px;
   line-height: 1.7;
