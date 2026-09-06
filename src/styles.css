@@ -1235,14 +1235,17 @@ body.env-locked { overflow: hidden; }
   background: var(--basil-line);
   margin: 18px auto 20px;
 }
-.dress-code .dc-sub {
+.dress-code .dc-sub,
+.photo-stack .dc-sub {
   font-family: var(--font-label);
   letter-spacing: 0.04em;
   font-size: 21px;
   color: var(--cream);
   margin-bottom: 14px;
+  text-align: center;
 }
-.dress-code .dc-sub strong {
+.dc-sub strong,
+.dc-text strong {
   font-weight: 700;
   -webkit-text-stroke: 0.6px currentColor;
 }
