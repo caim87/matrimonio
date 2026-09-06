@@ -961,6 +961,19 @@ image-slot {
 }
 .sobre-icon svg { opacity: 0.85; }
 
+/* aviso "individual" fuera del recuadro, mas grande */
+.rsvp-individual {
+  font-size: 24px;
+  letter-spacing: 0.02em;
+  line-height: 1.6;
+  color: var(--cream-dim);
+  margin: 0 0 20px;
+}
+.rsvp-individual strong {
+  font-weight: 700;
+  color: var(--cream);
+}
+
 /* aviso individual RSVP */
 .rsvp-notice {
   font-size: 20px;
