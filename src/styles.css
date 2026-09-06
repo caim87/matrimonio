@@ -42,9 +42,9 @@
   --line: rgba(46, 58, 42, 0.14);
   --line-soft: rgba(46, 58, 42, 0.07);
 
-  --font-display: "Cormorant Garamond", Georgia, serif;
-  --font-label: "Marcellus", Georgia, serif;
-  --font-body: "Jost", system-ui, sans-serif;
+  --font-display: "Please Write Me A Song", "Cormorant Garamond", Georgia, serif;
+  --font-label: "Please Write Me A Song", "Marcellus", Georgia, serif;
+  --font-body: "Please Write Me A Song", "Jost", system-ui, sans-serif;
 
   --maxw: 460px;
   --pad: 28px;
