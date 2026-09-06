@@ -1090,6 +1090,13 @@ image-slot {
   background: url('sobre-kraft.jpg') center center / cover no-repeat;
   transition: transform 1s ease, opacity 1s ease;
 }
+/* en pantallas anchas (desktop) el recorte movil se ve gigante/pixelado:
+   usamos la foto completa sin recortar, contenida dentro del fondo oscuro */
+@media (min-width: 900px) {
+  .envelope {
+    background: #2b241d url('sobre-kraft-full.jpg') center center / contain no-repeat;
+  }
+}
 .envelope-overlay.open .envelope { transform: scale(1.06); opacity: 0; }
 
 /* --- Botón "Toca el sobre" abajo --- */
