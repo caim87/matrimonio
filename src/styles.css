@@ -1180,6 +1180,10 @@ body.env-locked { overflow: hidden; }
   color: var(--cream);
   margin-bottom: 6px;
 }
+.tl-ep {
+  color: #8B4A2F;
+  text-shadow: 0 0 4px rgba(247,244,236,0.9), 0 0 8px rgba(247,244,236,0.7), 0 1px 2px rgba(247,244,236,0.9);
+}
 .tl-text {
   font-family: "Please Write Me A Song", var(--font-body), cursive;
   font-size: 24px;
