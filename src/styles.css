@@ -1228,13 +1228,13 @@ body.env-locked { overflow: hidden; }
   font-family: var(--font-display);
   font-style: italic;
   font-weight: 400;
-  font-size: clamp(24px, 6vw, 30px);
+  font-size: clamp(21px, 5.2vw, 26px);
   line-height: 1.4;
   color: var(--cream);
   text-align: center;
   max-width: 340px;
   margin: 0 auto 8px;
-  padding: 0 var(--pad);
+  padding: 40px var(--pad) 0;
 }
 
 
