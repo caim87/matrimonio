@@ -13,6 +13,15 @@
   font-display: swap;
 }
 
+/* Fuente manuscrita casual para los textos de "Nuestra historia" (uso personal) */
+@font-face {
+  font-family: "Please Write Me A Song";
+  src: url("fonts/PleaseWriteMeASong.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   /* Fondos claros (crema / hueso) */
   --bg: #F7F4EC;
@@ -1161,14 +1170,15 @@ body.env-locked { overflow: hidden; }
   margin-bottom: 4px;
 }
 .tl-title {
-  font-family: var(--font-display);
-  font-weight: 500;
-  font-size: 23px;
+  font-family: "Please Write Me A Song", var(--font-display), cursive;
+  font-weight: 700;
+  font-size: 26px;
   color: var(--cream);
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 .tl-text {
-  font-size: 14px;
+  font-family: "Please Write Me A Song", var(--font-body), cursive;
+  font-size: 18px;
   color: var(--cream-dim);
   line-height: 1.6;
 }
