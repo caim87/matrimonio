@@ -116,8 +116,8 @@ section {
 /* ---- Type ---------------------------------------------------------- */
 .kicker {
   font-family: var(--font-label);
-  font-size: 12px;
-  letter-spacing: 0.42em;
+  font-size: 15px;
+  letter-spacing: 0.36em;
   text-transform: uppercase;
   color: var(--basil);
   margin-bottom: 22px;
@@ -141,7 +141,7 @@ h2.title em {
 }
 
 .lede {
-  font-size: 16px;
+  font-size: 20px;
   color: var(--cream-dim);
   line-height: 1.85;
   max-width: 34ch;
@@ -467,7 +467,7 @@ image-slot {
 }
 .story-photo image-slot { width: 100%; height: 100%; }
 .story-photo img { width: 100%; height: 100%; object-fit: cover; display: block; border: 1px solid var(--line-soft); }
-.story p { color: var(--cream-dim); font-size: 16px; margin-bottom: 16px; }
+.story p { color: var(--cream-dim); font-size: 20px; margin-bottom: 16px; }
 .story p:last-child { margin-bottom: 0; }
 .story .sign {
   font-family: var(--font-display);
@@ -606,17 +606,17 @@ image-slot {
 .event + .event { margin-top: 14px; }
 .event .ev-ico {
   font-family: var(--font-label);
-  font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase;
+  font-size: 13px; letter-spacing: 0.28em; text-transform: uppercase;
   color: var(--basil);
   margin-bottom: 14px;
 }
 .event h3 {
   font-family: var(--font-display);
-  font-weight: 400; font-size: 30px; line-height: 1.05;
+  font-weight: 700; font-size: 36px; line-height: 1.05;
   margin-bottom: 6px;
 }
-.event .ev-time { color: var(--warm); font-size: 15px; letter-spacing: 0.04em; margin-bottom: 14px; }
-.event .ev-place { color: var(--cream-dim); font-size: 15px; }
+.event .ev-time { color: var(--warm); font-size: 19px; letter-spacing: 0.04em; margin-bottom: 14px; }
+.event .ev-place { color: var(--cream-dim); font-size: 19px; }
 .event .ev-place strong { color: var(--cream); font-weight: 400; }
 
 .btn-line {
@@ -625,9 +625,9 @@ image-slot {
   gap: 10px;
   margin-top: 20px;
   font-family: var(--font-label);
-  letter-spacing: 0.22em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  font-size: 11px;
+  font-size: 14px;
   color: var(--cream);
   text-decoration: none;
   border: 1px solid var(--basil-line);
@@ -672,7 +672,7 @@ image-slot {
 .dress h3 {
   font-family: var(--font-display); font-weight: 400; font-size: 30px; margin-bottom: 12px;
 }
-.dress p { color: var(--cream-dim); font-size: 15px; max-width: 32ch; margin: 0 auto; }
+.dress p { color: var(--cream-dim); font-size: 20px; max-width: 32ch; margin: 0 auto; }
 
 /* ============================================================
    PLAYLIST
@@ -793,7 +793,7 @@ image-slot {
 .field label {
   display: block;
   font-family: var(--font-label);
-  font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+  font-size: 14px; letter-spacing: 0.2em; text-transform: uppercase;
   color: var(--cream-dim);
   margin-bottom: 10px;
 }
@@ -803,7 +803,7 @@ image-slot {
   border: 0; border-bottom: 1px solid var(--line);
   color: var(--cream);
   font-family: var(--font-body);
-  font-size: 16px; font-weight: 300;
+  font-size: 20px; font-weight: 300;
   padding: 10px 0;
   outline: none;
   transition: border-color .3s;
@@ -820,7 +820,7 @@ image-slot {
   border: 1px solid var(--line);
   color: var(--cream-dim);
   font-family: var(--font-label);
-  letter-spacing: 0.18em; text-transform: uppercase; font-size: 12px;
+  letter-spacing: 0.16em; text-transform: uppercase; font-size: 15px;
   padding: 16px 8px;
   cursor: pointer;
   transition: all .3s;
@@ -835,7 +835,7 @@ image-slot {
   color: var(--ink);
   border: 0;
   font-family: var(--font-label);
-  letter-spacing: 0.24em; text-transform: uppercase; font-size: 12px;
+  letter-spacing: 0.2em; text-transform: uppercase; font-size: 15px;
   padding: 18px;
   cursor: pointer;
   transition: background .3s, transform .2s;
@@ -855,8 +855,8 @@ image-slot {
   display: flex; align-items: center; justify-content: center;
   color: var(--basil);
 }
-.rsvp-done h3 { font-family: var(--font-display); font-weight: 400; font-size: 30px; margin-bottom: 10px; }
-.rsvp-done p { color: var(--cream-dim); font-size: 15px; }
+.rsvp-done h3 { font-family: var(--font-display); font-weight: 700; font-size: 34px; margin-bottom: 10px; }
+.rsvp-done p { color: var(--cream-dim); font-size: 20px; }
 
 #rsvp {
   padding-bottom: 20px;
@@ -876,12 +876,12 @@ image-slot {
 }
 .foot .hash {
   font-family: var(--font-label);
-  letter-spacing: 0.28em; text-transform: uppercase; font-size: 13px;
+  letter-spacing: 0.26em; text-transform: uppercase; font-size: 16px;
   color: var(--basil);
 }
 .foot .tiny {
   margin-top: 30px;
-  font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+  font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase;
   color: var(--cream-faint);
 }
 .foot {
@@ -926,7 +926,7 @@ image-slot {
   background: var(--cream);
   color: var(--ink);
   font-family: var(--font-label);
-  letter-spacing: 0.14em; text-transform: uppercase; font-size: 11px;
+  letter-spacing: 0.12em; text-transform: uppercase; font-size: 14px;
   padding: 12px 22px;
   opacity: 0;
   pointer-events: none;
@@ -963,8 +963,8 @@ image-slot {
 
 /* aviso individual RSVP */
 .rsvp-notice {
-  font-size: 13px;
-  letter-spacing: 0.04em;
+  font-size: 18px;
+  letter-spacing: 0.02em;
   line-height: 1.6;
   color: var(--cream-faint, rgba(245,238,220,0.55));
   border-left: 2px solid rgba(196,160,80,0.4);
@@ -1076,9 +1076,9 @@ image-slot {
   transform: translateX(-50%);
   z-index: 6;
   font-family: var(--font-label);
-  letter-spacing: 0.22em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 15px;
   color: #F3F0E6;
   background: rgba(46,38,29,0.70);
   padding: 11px 24px;
@@ -1167,22 +1167,22 @@ body.env-locked { overflow: hidden; }
 }
 .tl-date {
   font-family: var(--font-label);
-  letter-spacing: 0.18em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  font-size: 11px;
+  font-size: 14px;
   color: var(--warm);
   margin-bottom: 4px;
 }
 .tl-title {
   font-family: "Please Write Me A Song", var(--font-display), cursive;
   font-weight: 700;
-  font-size: 26px;
+  font-size: 32px;
   color: var(--cream);
   margin-bottom: 6px;
 }
 .tl-text {
   font-family: "Please Write Me A Song", var(--font-body), cursive;
-  font-size: 18px;
+  font-size: 22px;
   color: var(--cream-dim);
   line-height: 1.6;
 }
@@ -1221,12 +1221,12 @@ body.env-locked { overflow: hidden; }
 .dress-code .dc-sub {
   font-family: var(--font-label);
   letter-spacing: 0.04em;
-  font-size: 17px;
+  font-size: 21px;
   color: var(--cream);
   margin-bottom: 14px;
 }
 .dress-code .dc-text {
-  font-size: 15px;
+  font-size: 20px;
   line-height: 1.7;
   color: var(--cream-dim);
   margin-bottom: 14px;
